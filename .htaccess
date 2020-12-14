@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /projectingperformance/
+
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^www\.pci\.leeds\.ac\.uk [NC]
+RewriteRule (.*) http://www.pci.leeds.ac.uk/projectingperformance/home.html [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://www.pci.leeds.ac.uk/projectingperformance/home.html [L,QSA]
+
